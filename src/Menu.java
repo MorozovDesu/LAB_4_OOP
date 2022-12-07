@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
@@ -48,8 +49,13 @@ public class Menu {
                     group.addCadres();
                     break;
                 case 3:
-                    int a = keyboard.nextInt();
-                    group.delCadres(a);
+                    try {
+                        int a = keyboard.nextInt();
+                        group.delCadres(a);
+                    }
+                    catch (InputMismatchException e){
+                        System.out.println("Вводите только пункты меню");
+                    }
                     break;
                 case 4:
                     System.out.println(group);
@@ -63,7 +69,7 @@ public class Menu {
                 case 0:
                     break;
                 default:
-                    System.out.println("Введите существующий пункт меню от 0 до 7.");
+                    System.out.println("Введите существующий пункт меню от 0 до 6.");
             }
         }while (choice != 0);
     }

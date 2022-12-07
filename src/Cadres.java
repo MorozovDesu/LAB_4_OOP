@@ -49,7 +49,7 @@ abstract class Cadres {
     }
     @Override
     public String toString() {
-        return "Cadres {name = " + name + (age != 0 ? ", age = " + age : "") +
+        return "Cadres {name = " + name + (age != 0 ? ", age = " + age : " ") +
                 "job = " + job+'}';
     }
 }
